@@ -52,7 +52,7 @@ app.get("/about", loggedIn,  (req, res) => {
     res.render("about.ejs")
 })
 
-app.get("/usr/198/", (req, res) => {
+app.get("/", (req, res) => {
     res.render("welcome.ejs")
 })
 
