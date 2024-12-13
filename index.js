@@ -52,7 +52,7 @@ app.get("/usr/198/about", loggedIn,  (req, res) => {
     res.render("about.ejs")
 })
 
-app.get("/usr/198/", (req, res) => {
+app.get("/", (req, res) => {
     res.render("welcome.ejs")
 })
 
@@ -122,7 +122,7 @@ app.post("/usr/198/registered", (req, res, next) => {
 })
 
 
-app.post("usr/198/logout", function(req, res, next) {
+app.post("/usr/198/logout", function(req, res, next) {
     req.logout(function(err) {
       if (err) { 
         return next(err); 
