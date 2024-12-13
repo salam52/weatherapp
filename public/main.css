@@ -1,0 +1,40 @@
+body {
+    background-color: black; 
+    color: white; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0; 
+    text-align: center;
+}
+
+
+button {
+    background-color: yellow; 
+    color: black; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+
+button:hover {
+    background-color: orange; 
+}
+
+
+input[type="text"], input[type="submit"], input[type="password"], textarea {
+    background-color: yellow;
+    color: black; 
+    padding: 10px; 
+    font-size: 16px; 
+    border-radius: 5px;
+    margin: 10px 0; 
+    width: 200px; 
+}
+

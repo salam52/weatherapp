@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="main.css"/>
+  </head>
+  <body>
+    <h1>Search for a City</h1>
+    <form class="search" action="/weather" method="GET">
+        <input type="text" placeholder="City" name="cityname">
+        <button>Search</i></button>
+    </form>
+    <p><%= message %></p>
+    <% if (found){ %>
+    <p>The weather for <%= city %> is as follows<br>
+        <%= desc %> <br>
+        Tempreture is <%= temp %><br>
+        Humidity is <%= humidity %><br>
+        The timezone is <%= timezone %><br>
+    </p>
+    <%}%>
+    <button onclick="location.href='/home'">Back</button>
+  </body>
+</html>
