@@ -32,10 +32,10 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 const db = mysql.createConnection ({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+    host: localhost,
+    user: weatheruser,
+    password: weather,
+    database: weatherapp
 })
 
 db.connect((err) => {
