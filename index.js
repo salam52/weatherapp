@@ -85,7 +85,7 @@ app.get("/weather", loggedIn, (req, res) => {
 })
 
 
-app.get("/home", loggedIn, (req, res) => {
+app.get("/usr/198/home", loggedIn, (req, res) => {
     res.render("home.ejs")
 })
 
