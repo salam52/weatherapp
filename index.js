@@ -94,8 +94,8 @@ app.get("/login", loggedOut, (req, res) => {
 })
 
 app.post("/login", loggedOut, passport.authenticate('local', {
-    successRedirect: "/home",
-    failureRedirect: "/login"
+    successRedirect: "/usr/198/home",
+    failureRedirect: "/usr/198/login"
     
 }))
 
