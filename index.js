@@ -33,8 +33,8 @@ app.use(passport.session())
 
 const db = mysql.createConnection ({
     host: "localhost",
-    user: "usala001",
-    password: "#london16",
+    user: process.env.USER,
+    password: process.env.PASSWORD,
     database: "weatherapp"
 })
 
@@ -46,17 +46,17 @@ db.connect((err) => {
 })
 global.db = db
 
-app.use("/api", require("./routes/api"))
+app.use("/usr/198/api", require("./routes/api"))
 
-app.get("/about", loggedIn,  (req, res) => {
+app.get("/usr/198//about", loggedIn,  (req, res) => {
     res.render("about.ejs")
 })
 
-app.get("/", (req, res) => {
+app.get("/usr/198/", (req, res) => {
     res.render("welcome.ejs")
 })
 
-app.get("/weather", loggedIn, (req, res) => { 
+app.get("/usr/198//weather", loggedIn, (req, res) => { 
     const city = req.query.cityname
     let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
     request(url, function (err, response, body) {
@@ -85,25 +85,25 @@ app.get("/weather", loggedIn, (req, res) => {
 })
 
 
-app.get("/home", loggedIn, (req, res) => {
+app.get("/usr/198/home", loggedIn, (req, res) => {
     res.render("home.ejs")
 })
 
-app.get("/login", loggedOut, (req, res) => {
+app.get("usr/198//login", loggedOut, (req, res) => {
     res.render("login.ejs")
 })
 
-app.post("/login", loggedOut, passport.authenticate('local', {
+app.post("usr/198//login", loggedOut, passport.authenticate('local', {
     successRedirect: "/home",
     failureRedirect: "/login"
     
 }))
 
-app.get("/register", loggedOut, (req, res) => {
+app.get("usr/198//register", loggedOut, (req, res) => {
     res.render("register.ejs")
 })
 
-app.post("/registered", (req, res, next) => {
+app.post("usr/198//registered", (req, res, next) => {
     const saltRounds = 10
     const plainPassword = req.body.password
     bcrypt.hash(plainPassword, saltRounds, function(err, hashedPassword) {
@@ -122,7 +122,7 @@ app.post("/registered", (req, res, next) => {
 })
 
 
-app.post("/logout", function(req, res, next) {
+app.post("usr/198//logout", function(req, res, next) {
     req.logout(function(err) {
       if (err) { 
         return next(err); 
